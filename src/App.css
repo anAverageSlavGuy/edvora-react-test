@@ -1,10 +1,178 @@
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html, body, #root {
+  height: 100%; 
+}
+
+body {
+  font-size: 16px;
+}
+
+h1, h2, h3 {
+  margin: 0.5rem;
+}
+
+h1 {
+  color: #e2e2e2;
+}
+
+h2 {
+  color:#666464;
+}
+
+h3 {
+  color:#a1a1a1!important;
+}
+
 .App {
-  text-align: center;
+  display: flex;
+  height: 100%;
+  background-color: #292929;
 }
 
 .App-logo {
   height: 40vmin;
   pointer-events: none;
+}
+
+.sidebar {
+  width: 20%;
+  padding: 2rem 1rem;
+}
+
+.filters {
+  flex-direction: column;
+  padding: 1.5rem!important;
+}
+
+.filter-select {
+  width: 100%;
+    height: 2.5vw;
+    font-size: 1rem;
+    border: none;
+    border-radius: 5px;
+    padding: 0 0.5rem;
+    color: #a1a1a1;
+    background: #232323;
+}
+
+.card {
+  background-color: #131313;
+  border-radius: 10px;
+  padding: 1rem;
+  display: flex;
+  gap: 1rem;
+  -ms-overflow-style: none; /* IE and Edge */
+  scrollbar-width: none; /* Firefox */
+  overflow-x: auto;
+}
+
+/* .card::-webkit-scrollbar {
+  display: none;
+} */
+
+.product {
+  background-color: #232523;
+  color: white;
+  display: inline-grid;
+  grid-template-columns: 40% 60%;
+  grid-template-rows: 56% 22% 22%;
+  min-width: 17vw;
+  width: 17vw;
+  height: 12vw;
+  border-radius: 5px;
+  padding: 0.5rem;
+  transition: 0.5s ease all;
+  cursor: pointer;
+}
+
+.product:hover {
+  transform: scale(1.1);
+}
+
+.product-cell > img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  margin: auto;
+  border-radius: 5px;
+  background: white;
+}
+
+.product-cell {
+  padding: 0.25rem 0.5rem;
+  overflow: hidden;
+  display: flex;
+  gap: 0.5rem;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.product-title {
+  font-weight: 500;
+  font-size: 1rem;
+  color: #a1a1a1;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.product-brand {
+  font-weight: 400;
+  font-size: 0.875rem;
+  color: #666464;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.product-price {
+  font-weight: 500;
+  font-size: 1rem;
+  color: #a1a1a1;
+}
+
+.product-date {
+  font-weight: 400;
+  font-size: 0.875rem;
+  color: #666464;
+  text-align: right;
+}
+
+.product-location {
+  font-size: 0.875rem;
+  font-weight: 400;
+  color: #666464;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.product-description {
+  font-size: 0.75rem;
+  font-weight: 400;
+  color: #666464;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.product-cell > span {
+  overflow: hidden;
+}
+
+.container {
+  width: 80%;
+  padding: 1rem 1rem 1rem 0;
+  font-weight: bold;
+  overflow-y: auto;
+}
+
+.bordered-header {
+  border-bottom: 3px solid #363636;
+  color: #666464;
+  font-weight: 600;
+  padding-bottom: 0.5rem;
 }
 
 @media (prefers-reduced-motion: no-preference) {
@@ -27,6 +195,31 @@
 .App-link {
   color: #61dafb;
 }
+
+
+.card::-webkit-scrollbar {
+  background-color:#fff;
+  width:16px
+}
+
+/* background of the scrollbar except button or resizer */
+.card::-webkit-scrollbar-track {
+  background-color: #292929;
+}
+
+
+/* scrollbar itself */
+.card::-webkit-scrollbar-thumb {
+  background-color: #666464;
+  border-radius:16px;
+  border: 5px solid #292929;
+}
+.card::-webkit-scrollbar-thumb:hover {
+  background-color:#a0a0a5;
+}
+
+/* set button(top and bottom of the scrollbar) */
+.card::-webkit-scrollbar-button {display:none}
 
 @keyframes App-logo-spin {
   from {
